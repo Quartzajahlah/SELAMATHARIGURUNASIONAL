@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selamat Hari Guru Nasional! - Dibuat oleh AGUS 7.4</title>
+    <meta name="author" content="AGUS 7.4 (Developer: [Nama Lengkap atau Panggilan Lain])">
+    <meta name="description" content="Rayakan Hari Guru Nasional dengan ucapan dan dedikasi. Website ini dibuat oleh AGUS 7.4 untuk menghormati jasa para guru.">
+    <link rel="shortcut icon" href="https://static.xx.fbcdn.net/rsrc.php/yo/r/iRmz9l94efK.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Gaya Umum */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f0f5ff, #e0e8ff);
+            color: #333;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: #fff;
+            text-align: center;
+            padding: 50px 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+            animation: slideInDown 1s ease-in-out forwards;
+        }
+
+        header p {
+            font-size: 1.4em;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            animation: slideInUp 1s ease-in-out forwards;
+        }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Animasi Balon */
+        .balloons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none; /* Biarkan elemen lain di-klik */
+        }
+
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            width: 50px;
+            height: 70px;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            background: #e74c3c;
+            animation: rise 5s linear infinite;
+            opacity: 0.8;
+            box-shadow: inset 0 -10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .balloon:nth-child(even) { background: #f39c12; }
+        .balloon:nth-child(3n) { background: #9b59b6; }
+        .balloon:nth-child(5n) { background: #2ecc71; }
+
+        .balloon:nth-child(3)  { left: 15%; }
+        .balloon:nth-child(4)  { left: 70%; }
+        .balloon:nth-child(5)  { left: 90%; }
+        .balloon:nth-child(6)  { left: 50%; }
+        .balloon:nth-child(7)  { left: 30%; }
+
+        @keyframes rise {
+            0% { transform: translateY(0) translateX(0); }
+            100% { transform: translateY(-800px) translateX(50px); opacity: 0; }
+        }
+
+        /* Bagian Konten Utama */
+        main {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .quotes {
+            font-size: 1.6em;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-style: italic;
+            color: #555;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        .quotes::before, .quotes::after {
+            content: '"';
+            color: #3498db;
+            font-size: 2em;
+        }
+
+        .quotes::before { margin-right: 5px; }
+        .quotes::after { margin-left: 5px; }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Menengahkan kartu */
+            gap: 30px; /* Jarak antar kartu */
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            text-align: left;
+            width: 350px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+       .card img {
+          width: 100%; /* Lebar gambar 100% dari wadah */
+          height: 200px; /* Tinggi gambar yang tetap */
+          object-fit: cover; /* Memastikan gambar mengisi wadah tanpa distorsi */
+          border-radius: 10px; /* Memberikan sudut yang membulat pada gambar */
+          margin-bottom: 15px; /* Jarak antara gambar dan teks */
+      }
+        .card h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        /* Tombol Kirim Pesan */
+        .message-button {
+            background-color: #2ecc71;
+            color: #fff;
+            font-size: 1.2em;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            align-self: center; /* Tengah vertikal tombol */
+            margin-top: 20px; /* Jarak dengan teks */
+        }
+
+        .message-button:hover {
+            background-color: #27ae60;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #2c3e50;
+            color: #fff;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsif */
+        @media (max-width: 768px) {
+            header {
+                padding: 30px 15px;
+            }
+
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1.2em;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .quotes {
+                font-size: 1.4em;
+            }
+
+            .card {
+                width: 90%;
+            }
+
+            .card h2 {
+                font-size: 1.6em;
+            }
+
+            .card p {
+                font-size: 1em;
+            }
+        }
+
+       /* Tambahan Animasi Gelombang */
+        .wave-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; /* Tinggi gelombang */
+            overflow: hidden;
+        }
+
+        .wave {
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+            position: absolute;
+            top: -50px; /* Posisi gelombang agar sebagian tersembunyi */
+            width: 6400px;
+            height: 198px;
+            animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+        }
+
+        .wave:nth-of-type(2) {
+            top: -70px; /* Gelombang kedua sedikit lebih tinggi */
+            animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes wave {
+            0% { margin-left: 0; }
+            100% { margin-left: -1600px; }
+        }
+
+        @keyframes swell {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+       /* Efek Parallax (Opsional) */
+       header {
+           background-attachment: fixed;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover; /* Memastikan gambar menutupi header */
+       }
+
+       .parallax {
+           background-image: url('https://images.unsplash.com/photo-1505664194779-8be2ab0aa9dc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Ganti dengan URL gambar parallax Anda */
+           min-height: 400px;
+           background-attachment: fixed;
+           background-position: center;
+           background-repeat: no-repeat;
+           background-size: cover;
+       }
+
+       /* CSS untuk Modal */
+       .modal {
+           display: none;
+           position: fixed;
+           top: 0;
+           left: 0;
+           width: 100%;
+           height: 100%;
+           background-color: rgba(0, 0, 0, 0.5);
+           z-index: 1000;
+           align-items: center;
+           justify-content: center;
+       }
+
+       .modal-content {
+           background-color: #fff;
+           padding: 20px;
+           border-radius: 10px;
+           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+           max-width: 600px;
+           width: 90%; /* Responsif */
+       }
+
+       .close {
+           position: absolute;
+           top: 10px;
+           right: 20px;
+           font-size: 24px;
+           cursor: pointer;
+           color: #888;
+       }
+
+       .show {
+           display: flex; /* Menampilkan modal */
+       }
+
+       /* Style form dalam modal */
+       .modal-content form {
+           display: flex;
+           flex-direction: column;
+       }
+
+       .modal-content input, .modal-content textarea {
+           margin-bottom: 15px;
+           padding: 12px;
+           border: 1px solid #ddd;
+           border-radius: 5px;
+           font-size: 16px;
+           resize: none; /* Mencegah textarea diubah ukurannya */
+       }
+
+       .modal-content label {
+           margin-bottom: 5px;
+           font-weight: bold;
+       }
+
+       .modal-content button {
+           background-color: #3498db;
+           color: #fff;
+           padding: 12px;
+           border: none;
+           border-radius: 5px;
+           cursor: pointer;
+           font-size: 18px;
+       }
+
+       /* About Me Section */
+       .about-me {
+           padding: 20px;
+           background-color: #f9f9f9;
+           border-top: 1px solid #eee;
+           text-align: center;
+       }
+
+       .about-me p {
+           font-style: italic;
+           color: #777;
+           margin-bottom: 10px;
+       }
+
+       .about-me a {
+           color: #3498db;
+           text-decoration: none;
+       }
+
+       .about-me a:hover {
+           text-decoration: underline;
+       }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="balloons">
+            <div class="balloon" style="left: 10%; animation-delay: 0s;"></div>
+            <div class="balloon" style="left: 25%; animation-delay: 1s;"></div>
+            <div class="balloon" style="left: 40%; animation-delay: 2s;"></div>
+            <div class="balloon" style="left: 55%; animation-delay: 3s;"></div>
+            <div class="balloon" style="left: 70%; animation-delay: 1.5s;"></div>
+            <div class="balloon" style="left: 85%; animation-delay: 2.5s;"></div>
+        </div>
+        <div class="wave-container">
+          <div class="wave"></div>
+          <div class="wave"></div>
+      </div>
+      <div class="parallax">
+        <h1>Selamat Hari Guru Nasional!</h1>
+        <p>Terima kasih atas dedikasi dan inspirasi Anda. Anda adalah pahlawan tanpa tanda jasa.</p>
+      </div>
+    </header>
+
+    <main>
+        <p class="quotes">
+            "Guru yang baik tahu bagaimana membawa keluar yang terbaik dalam diri siswa. Mereka menginspirasi, membimbing, dan mengubah dunia satu kelas pada satu waktu."
+        </p>
+
+        <div class="card-container">
+            <div class="card">
+              <img src="selamathariguru.jpg" alt="Guru Mengajar">
+                <h2>Dedikasi Tanpa Batas</h2>
+                <p>Guru adalah pahlawan sejati yang mengorbankan waktu dan tenaga mereka untuk membimbing generasi muda. Dedikasi mereka tak ternilai harganya.</p>
+                <button class="message-button" onclick="openModal()">Kirim Pesan Terima Kasih</button>
+
+            </div>
+
+            <div class="card">
+              <img src="selamathariguru.jpg" alt="Inspirasi Abadi">
+                <h2>Inspirasi Abadi</h2>
+                <p>Guru tidak hanya memberikan pengetahuan, tetapi juga menginspirasi siswa untuk meraih mimpi mereka. Mereka adalah sumber motivasi yang tak pernah padam.</p>
+                <button class="message-button" onclick="openModal()">Kirim Pesan Terima Kasih</button>
+            </div>
+
+            <div class="card">
+              <img src="selamathariguru.jpg" alt="Pembentuk Karakter">
+                <h2>Pembentuk Karakter</h2>
+                <p>Guru berperan penting dalam membentuk karakter dan moral siswa. Mereka menanamkan nilai-nilai luhur yang akan membimbing mereka sepanjang hidup.</p>
+                <button class="message-button" onclick="openModal()">Kirim Pesan Terima Kasih</button>
+            </div>
+        </div>
+    </main>
+    <!-- About Me Section -->
+    <div class="about-me">
+        <p>Halaman ini didedikasikan untuk seluruh guru di Indonesia. Terima kasih atas jasa-jasamu!</p>
+        <p>Dibuat dengan cinta oleh AGUS 7.4</p>
+        <p>Kontak kami: <a href="emailto:aguxzzquartz1121@gmail.com">aguxzzquartz1121@gmail.com</a></p>
+    </div>
+
+    <footer>
+        <p>© 2025 Selamat Hari Guru Nasional | Dibuat dengan ❤️ untuk semua guru hebat.</p>
+        <p><a href="#">Tentang Kami</a> | <a href="#">Kebijakan Privasi</a> | <a href="#">Kontak</a></p>
+    </footer>
+
+    </p>untuk memutar sebuah lagu
+
+  <button id="putarMusik">Putar Lagu</button>
+
+  <audio id="myAudio" src="terimakasihguruku.mp3" preload="auto"></audio>
+
+  <script>
+    var audio = document.getElementById("myAudio");
+    var tombolPutar = document.getElementById("putarMusik");
+
+    tombolPutar.addEventListener("click", function() {
+      if (audio.paused) {
+        audio.play();
+        tombolPutar.textContent = "Pause Lagu";
+      } else {
+        audio.pause();
+        tombolPutar.textContent = "Putar Lagu";
+      }
+    });
+
+    audio.addEventListener("ended", function() {
+      tombolPutar.textContent = "Putar Lagu"; // Reset tombol saat lagu selesai
+    });
+  </script>
+    
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2>Kirim Pesan Terima Kasih</h2>
+            <form>
+                <label for="name">Nama:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Pesan:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Kirim</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+      // JavaScript untuk modal
+        var modal = document.getElementById("myModal");
+
+        function openModal() {
+            modal.classList.add("show");
+        }
+
+        function closeModal() {
+            modal.classList.remove("show");
+        }
+
+        // Menutup modal jika mengklik di luar modal-content
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html><ALOASK-SEPARATE-EDITORS><ALOASK-SEPARATE-EDITORS>
