@@ -446,33 +446,6 @@
   </audio>
 
   <script>
-    // Memeriksa apakah autoplay diperbolehkan
-    document.addEventListener('DOMContentLoaded', function() {
-      var audio = document.getElementById('myAudio');
-
-      // Coba putar audio
-      var playPromise = audio.play();
-
-      if (playPromise !== undefined) {
-        playPromise.then(function() {
-          // Autoplay dimulai!  Buka mute sekarang.
-          audio.muted = false;
-        }).catch(function(error) {
-          // Autoplay ditolak.  Tampilkan pesan kepada pengguna atau meminta interaksi.
-          console.log("Autoplay ditolak oleh browser.  Error: ", error);
-          alert("Autoplay musik diblokir oleh browser Anda. Silakan klik di halaman ini untuk memutar musik.");
-
-          // Opsi 1: Meminta interaksi pengguna (click)
-          document.addEventListener('click', function() {
-            audio.muted = false;
-            audio.play();
-          }, { once: true }); // Hanya dengarkan satu kali
-
-          // Opsi 2: Menampilkan tombol putar/pause (uncomment untuk menggunakan)
-          // audio.controls = true; // Tampilkan kontrol
-        });
-      }
-    });
     
     <!-- Modal -->
     <div id="myModal" class="modal">
