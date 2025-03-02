@@ -395,11 +395,31 @@
       </div>
 </body>
 </html>
-<audio autoplay loop>
-  <source src="terimakasihguruku.mp3" type="audio/mp3">
-  Your browser does not support the audio element.
-</audio>
-</script>
+
+   <!-- Tombol Mute/Unmute -->
+    <button id="mute-button">MUSIC</button>
+
+    <!-- Audio -->
+    <audio id="bg-music" autoplay loop>
+        <source src="terimakasihguruku.mp3" type="audio/mp3">
+        Browser Anda tidak mendukung pemutaran audio.
+    </audio>
+
+    <script>
+        const music = document.getElementById("bg-music");
+        const muteButton = document.getElementById("mute-button");
+
+        muteButton.addEventListener("click", function() {
+            if (music.paused) {
+                music.play();
+                muteButton.textContent ="MUSIC ON";
+            } else {
+                music.pause();
+                muteButton.textContent = "MUSIC OFF";
+            }
+        });
+    </script>
+
 
       <div class="parallax">
         <h1>Selamat Hari Guru Nasional!</h1>
